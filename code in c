@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+int generate(int n){
+    srand(time(NULL));
+    return rand()%n;
+}
+int main()
+{
+    printf("game rule\n ");
+    printf("rock is represented by 0 \n scissors is represented by 1\n paper is represted by 2\n\n");
+char name[50];
+int a,b,c=0,d=0;
+printf("enter the nasme of player \n");
+scanf("%[^\n]%*c",&name);
+
+for(int i=1; i<=3; i++){
+printf("round %d\n",i);
+printf("%s turn\n",name);
+scanf("%d",&a);
+printf("pc's turn\n");
+b=generate(3);
+printf("%d\n",b);
+if(a==b){
+c=c;
+d=d;}
+else if(a==0&&b==1){
+    c++;
+}
+else if(a==1&&b==2){
+    c++;
+}
+else if(a==2&&b==0){
+    c++;
+}
+else{
+    d++;
+}
+
+}
+if(c>d){
+    printf("%s won the game\n",name);
+}
+else if(c==d){
+    printf("match draw\n");
+}
+else{printf("system won the game\n");
+}
+
+
+
+    return 0;
+}
